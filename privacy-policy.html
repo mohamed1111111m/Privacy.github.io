@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سياسة الخصوصية – KoraMatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #00C853;
+      --green-dark: #00952e;
+      --bg: #0a0f0d;
+      --surface: #111a14;
+      --surface2: #162019;
+      --border: #1e3024;
+      --text: #e8f5e9;
+      --muted: #7a9e82;
+      --accent: #69f0ae;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,200,83,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,83,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 0 50px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 0 30px rgba(0,200,83,0.35);
+    }
+
+    .logo-name {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-name span { color: var(--green); }
+
+    h1 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Section */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--green), transparent);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .section:hover { border-color: rgba(0,200,83,0.3); }
+
+    .section-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #b0c8b4;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    ul li {
+      color: #b0c8b4;
+      font-size: 15px;
+      padding: 6px 0 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    ul li::before {
+      content: '✦';
+      color: var(--green);
+      font-size: 11px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    strong { color: var(--text); font-weight: 700; }
+
+    /* Contact box */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(0,200,83,0.08), rgba(0,200,83,0.02));
+      border: 1px solid rgba(0,200,83,0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* Date badge */
+    .date-badge {
+      display: inline-block;
+      background: rgba(0,200,83,0.1);
+      border: 1px solid rgba(0,200,83,0.2);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer .glow {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    @media (max-width: 500px) {
+      .section { padding: 24px 20px; }
+      header { padding: 40px 0 36px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">⚽</div>
+      <div class="logo-name">Kora<span>Match</span></div>
+    </div>
+    <h1>سياسة الخصوصية</h1>
+    <p class="subtitle">نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية</p>
+    <span class="date-badge">آخر تحديث: يونيو 2026</span>
+  </header>
+
+  <!-- 1. Introduction -->
+  <div class="section">
+    <span class="section-icon">📋</span>
+    <h2>مقدمة</h2>
+    <p>
+      مرحباً بك في تطبيق <strong>KoraMatch</strong>، المنصة المتخصصة في تنظيم مباريات كرة القدم والبادل وحجز الملاعب في مصر.
+      تصف هذه السياسة كيفية جمع بياناتك الشخصية واستخدامها وحمايتها عند استخدام تطبيقنا.
+    </p>
+    <p>
+      باستخدامك للتطبيق، فأنت توافق على الشروط الواردة في هذه السياسة.
+    </p>
+  </div>
+
+  <!-- 2. Data collected -->
+  <div class="section">
+    <span class="section-icon">🗂️</span>
+    <h2>البيانات التي نجمعها</h2>
+    <p>نجمع الأنواع التالية من البيانات عند استخدامك للتطبيق:</p>
+    <ul>
+      <li><strong>بيانات الحساب:</strong> الاسم، رقم الهاتف، عنوان البريد الإلكتروني، وصورة الملف الشخصي.</li>
+      <li><strong>بيانات الملاعب والحجوزات:</strong> المواعيد المحجوزة، الملاعب المفضلة، وتاريخ الحجوزات.</li>
+      <li><strong>بيانات الدفع:</strong> يتم معالجة المدفوعات عبر Paymob ولا نحتفظ ببيانات البطاقات البنكية.</li>
+      <li><strong>بيانات المباريات:</strong> الفرق، النتائج، والإحصائيات المرتبطة بحسابك.</li>
+      <li><strong>بيانات الاستخدام:</strong> سجلات التطبيق وبيانات تشخيص الأخطاء لتحسين الأداء.</li>
+    </ul>
+  </div>
+
+  <!-- 3. How we use data -->
+  <div class="section">
+    <span class="section-icon">⚙️</span>
+    <h2>كيف نستخدم بياناتك</h2>
+    <ul>
+      <li>تشغيل خدمات المطابقة وحجز الملاعب.</li>
+      <li>إرسال إشعارات المباريات والحجوزات والعروض.</li>
+      <li>معالجة المدفوعات وتأكيد الحجوزات.</li>
+      <li>تحسين أداء التطبيق وتجربة المستخدم.</li>
+      <li>الاستجابة لاستفسارات الدعم الفني.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Data retention -->
+  <div class="section">
+    <span class="section-icon">🗓️</span>
+    <h2>مدة الاحتفاظ بالبيانات</h2>
+    <p>
+      نحتفظ ببياناتك الشخصية طوال فترة نشاط حسابك على التطبيق.
+    </p>
+    <p>
+      عند حذف حسابك، يتم حذف بياناتك الشخصية خلال <strong>30 يوماً</strong> من تاريخ طلب الحذف.
+      قد نحتفظ ببعض البيانات لفترة أطول إذا كان ذلك مطلوباً لأغراض قانونية أو تنظيمية.
+    </p>
+    <p>
+      بيانات الدفع يتم الاحتفاظ بها وفق سياسة <strong>Paymob</strong> ومتطلبات القانون المالي المصري.
+    </p>
+  </div>
+
+  <!-- 5. Delete data -->
+  <div class="section">
+    <span class="section-icon">🗑️</span>
+    <h2>كيفية حذف بياناتك</h2>
+    <p>يحق لك طلب حذف جميع بياناتك الشخصية من تطبيقنا في أي وقت عبر إحدى الطريقتين:</p>
+    <ul>
+      <li><strong>من داخل التطبيق:</strong> الإعدادات ← الحساب ← حذف الحساب.</li>
+      <li><strong>عبر البريد الإلكتروني:</strong> أرسل طلبك إلى البريد أدناه وسنقوم بحذف بياناتك خلال 30 يوماً.</li>
+    </ul>
+    <div class="contact-box">
+      📧 <a href="mailto:support@koramatch.app">support@koramatch.app</a>
+    </div>
+  </div>
+
+  <!-- 6. Sharing -->
+  <div class="section">
+    <span class="section-icon">🔗</span>
+    <h2>مشاركة البيانات مع أطراف ثالثة</h2>
+    <p>لا نبيع بياناتك الشخصية لأي طرف ثالث. قد نشارك بياناتك فقط مع:</p>
+    <ul>
+      <li><strong>Paymob</strong> – لمعالجة المدفوعات الإلكترونية.</li>
+      <li><strong>Firebase (Google)</strong> – لتشغيل قاعدة البيانات والإشعارات.</li>
+      <li>الجهات الحكومية عند الطلب القانوني.</li>
+    </ul>
+  </div>
+
+  <!-- 7. Security -->
+  <div class="section">
+    <span class="section-icon">🔒</span>
+    <h2>أمان البيانات</h2>
+    <p>
+      نستخدم أحدث معايير التشفير لحماية بياناتك، بما في ذلك HTTPS لكل الاتصالات وقواعد Firestore Security Rules لتقييد الوصول.
+      رغم ذلك، لا يوجد نظام آمن بالكامل ونشجعك على استخدام كلمة مرور قوية.
+    </p>
+  </div>
+
+  <!-- 8. Contact -->
+  <div class="section">
+    <span class="section-icon">📬</span>
+    <h2>تواصل معنا</h2>
+    <p>لأي استفسار بخصوص سياسة الخصوصية أو بياناتك، تواصل معنا عبر:</p>
+    <div class="contact-box">
+      📧 <a href="mailto:support@koramatch.app">support@koramatch.app</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <span class="glow">KoraMatch</span> – جميع الحقوق محفوظة</p>
+    <p style="margin-top:6px;">صُنع بـ ⚽ في الإسماعيلية، مصر</p>
+  </footer>
+
+</div>
+</body>
+</html>
